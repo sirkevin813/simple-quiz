@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Quiz</title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		<script type="text/javascript" src="behaviors.js"></script>
+		<link href='https://fonts.googleapis.com/css?family=Passion One' rel='stylesheet'>
+		<link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
+		<script> 
+			function submit(x){
+				submitAns(x);
+			} 
+			function startQuiz(which_quiz){
+				document.getElementById("topics choice").style.display = "none";
+				document.getElementById("quiz").style.display = "block";
+				//console.log("Questions for "+which_quiz);
+				readInQuestions(which_quiz);
+			}
+			function nextQ(){
+				newQuestion();
+			}
+		</script>
+	</head>
+	
+	<h1> Test Your Knowledge </h1>
+	<div class="buttons" /*style="background-color: green;"*/>
+	
+		<div id="topics choice">
+		<p>
+		</br>
+		Choose a topic:
+		</p>
+		<button class="topics" id="t1" onclick="startQuiz('disney')"> Disney Parks </button> </br>
+		<button class="topics" id="t2" onclick="startQuiz('misc')"> Miscellaneous </button>
+		</div>
+		
+		<div id="quiz">
+		<span id="score"> Score: 0 </span>
+		<p id="question">
+		
+		</p>
+		<button class="answers" id="b1" onclick="submit(0)">  </button>
+		<button class="answers" id="b2" onclick="submit(1)">  </button>
+		</br>
+		<button class="answers" id="b3" onclick="submit(2)">  </button>
+		<button class="answers" id="b4" onclick="submit(3)">  </button>
+		</div>
+		<button class="nextt" id="nextt" onclick="nextQ()"> Next Question >> </button>
+	</div>
+	
+</html>
